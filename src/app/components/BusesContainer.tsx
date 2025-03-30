@@ -18,7 +18,7 @@ function BusesContainer() {
     useEffect(() => {
         const interval = setInterval(() => {
             axios
-                .get(`http://localhost:3000/api/buses`)
+                .get(`http://zpgsa.vercel.app/api/buses`)
                 .then((res) => setBuses(res.data))
                 .catch(() => undefined);
         }, 500);
