@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function GET(req, res) {
+export async function GET() {
     try {
         const response = await axios.get('http://bielawa.trapeze.fi/bussit/web?command=olmapvehicles&action=getVehicles');
 

@@ -9,7 +9,7 @@ import {useEffect} from "react";
 import localforage from "localforage";
 import L from "leaflet";
 
-// @ts-ignore
+// @ts-expect-error it's working but TS have issue
 const createClusterCustomIcon = (cluster: L.MarkerCluster) => {
     return L.divIcon({
         html: `<span>${cluster.getChildCount()}</span>`,
@@ -35,7 +35,6 @@ const MyMap = () => {
 
             const url = this.getTileUrl(coords);
 
-            // Try to load from cache
             localforage.getItem<string>(url).then((cachedData) => {
                 if (cachedData) {
                     tile.src = cachedData; // Load from cache

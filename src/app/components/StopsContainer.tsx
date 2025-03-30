@@ -50,7 +50,7 @@ const StopPopup = ({stop, stopInfo}: { stop: Stop, stopInfo: StopDetails | null 
 };
 
 
-const StopMarker = React.memo(({stop, stopsDetails}: { stop: Stop, stopsDetails: Record<string, StopDetails> }) => {
+const StopMarker = ({stop, stopsDetails}: { stop: Stop, stopsDetails: Record<string, StopDetails> }) => {
     const markerRef = useRef<L.Marker>(null);
 
     const getStopInfoHandler = async () => {
@@ -70,7 +70,7 @@ const StopMarker = React.memo(({stop, stopsDetails}: { stop: Stop, stopsDetails:
             eventHandlers={{click: getStopInfoHandler}}
         />
     );
-});
+}
 
 function StopsContainer() {
     const [stops, setStops] = useState<Stop[]>([]);
@@ -96,5 +96,7 @@ function StopsContainer() {
         />
     ));
 }
+
+StopsContainer.displayName = 'StopsContainer';
 
 export default StopsContainer;
