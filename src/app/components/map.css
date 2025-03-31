@@ -14,9 +14,14 @@
     font-family: "Open Sans", sans-serif;
 }
 
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+}
+
 .line-number {
     position: absolute;
-    transform: translateY(27px);
+    transform: translateY(17px);
     text-shadow: 0 0 4px #fff;
     color: #000;
     width: 100%;

@@ -78,12 +78,12 @@ function StopsContainer() {
 
     useEffect(() => {
         axios
-            .get(`https://zpgsa.vercel.app/res/data/stops.json`)
+            .get(`${window.location.href}res/data/stops.json`)
             .then((res) => setStops(res.data))
             .catch(console.error);
 
         axios
-            .get(`https://zpgsa.vercel.app/res/data/stop_details.json`)
+            .get(`${window.location.href}res/data/stop_details.json`)
             .then((res) => setStopsDetails(res.data))
             .catch(console.error);
     }, [])
